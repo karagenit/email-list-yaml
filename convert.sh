@@ -3,7 +3,20 @@
 infile=$1
 outfile=$2
 
+count=0
+limit=20
+total=`wc -l < $infile`
+
+# UI
+function update-progress {
+
+	echo -ne "Processing... $(((count * 100 ) / total))%\r"
+}
+
+
+
 # Setup File
+echo ""
 echo "members: " > $outfile
 
 # For each line
@@ -29,4 +42,9 @@ do
 	echo "      last:  \"${lname}\"" >> $outfile
 	echo "      email: \"${email}\"" >> $outfile
 
+	((count++))
+	update-progress
+
 done < $infile
+
+echo ""
