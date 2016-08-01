@@ -20,5 +20,5 @@ First Last (email@site);
 First (email@site);
 ```
 
-That is all of the possible inputs to my knowledge. 
+That is all of the primary possible inputs, though there are a few that will not read properly such as those with middle names etc. 
 
